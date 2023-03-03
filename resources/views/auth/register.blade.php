@@ -18,7 +18,6 @@
                                 <div class="col-md-9">
                                     <select id="citizenship" class="js-example-basic-single form-select @error('citizenship') is-invalid @enderror"
                                         name="citizenship">
-                                        <option selected>Please select</option>
                                         <option value="1">Malaysia Citizen</option>
                                         <option value="2">Permanent Citizen</option>
                                         <option value="3">Non Malaysia Citizen</option>
@@ -54,8 +53,10 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label for="userid"
+                                <label for="userid" id="labelUserID"
                                     class="col-md-3 col-form-label text-md-end">{{ __('User ID') }}</label>
+                                <label for="userid" id="labelEmailID"
+                                    class="col-md-3 col-form-label text-md-end">{{ __('Email') }}</label>
 
                                 <div class="col-md-9">
                                     <input id="userid" type="text"
@@ -80,23 +81,6 @@
                                         value="{{ old('name') }}" autocomplete="name" autofocus>
 
                                     @error('name')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <label for="email"
-                                    class="col-md-3 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                                <div class="col-md-9">
-                                    <input id="email" type="email"
-                                        class="form-control @error('email') is-invalid @enderror" name="email"
-                                        value="{{ old('email') }}" autocomplete="email">
-
-                                    @error('email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -190,7 +174,24 @@
                                 </div>
                             </div>
 
-                            <div class="row mb-3">
+                            <div class="row mb-3" id="emailField">
+                                <label for="email"
+                                    class="col-md-3 col-form-label text-md-end">{{ __('Email Address') }}</label>
+
+                                <div class="col-md-9">
+                                    <input id="email" type="email"
+                                        class="form-control @error('email') is-invalid @enderror" name="email"
+                                        value="{{ old('email') }}" autocomplete="email">
+
+                                    @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row mb-3" id="passportField">
                                 <label for="passport"
                                     class="col-md-3 col-form-label text-md-end">{{ __('Passport No.') }}</label>
 
