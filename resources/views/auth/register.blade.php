@@ -63,6 +63,10 @@
                                         class="form-control @error('userid') is-invalid @enderror" name="userid"
                                         value="{{ old('userid') }}" autocomplete="userid" autofocus>
 
+                                    <p id="helperUserID" class="mb-0">
+                                        Looks good!
+                                    </p>
+
                                     @error('userid')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -79,7 +83,9 @@
                                     <input id="name" type="text"
                                         class="form-control @error('name') is-invalid @enderror" name="name"
                                         value="{{ old('name') }}" autocomplete="name" autofocus>
-
+                                    <p id="helperName" class="mb-0">
+                                        Looks good!
+                                    </p>
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -242,7 +248,9 @@
                                     <input id="address3" type="text"
                                         class="form-control @error('address3') is-invalid @enderror" name="address3"
                                         value="{{ old('address3') }}" autocomplete="address1" autofocus>
-
+                                    <p id="helperAddress" class="mb-0">
+                                        Looks good!
+                                    </p>
                                     @error('address3')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
