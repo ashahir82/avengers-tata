@@ -39,7 +39,7 @@
                                 <div class="col-md-9" id="isCitizen">
                                     <input id="isCitizen" type="text"
                                         class="form-control @error('isCitizen') is-invalid @enderror" name="isCitizen"
-                                        value="Malaysia" autocomplete="isCitizen" autofocus disabled>
+                                        value="Malaysia" autocomplete="isCitizen" autofocus readonly>
 
                                     @error('isCitizen')
                                         <span class="invalid-feedback" role="alert">
@@ -52,7 +52,7 @@
                                     <select id="nonCitizen"
                                         class="js-example-basic-single form-select @error('nonCitizen') is-invalid @enderror"
                                         name="nonCitizen">
-                                        <option selected>Please select</option>
+                                        <option value="" selected>Please select</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
                                         <option value="3">Three</option>
@@ -92,7 +92,7 @@
                                     class="col-md-3 col-form-label text-md-end">{{ __('Email') }}</label>
 
                                 <div class="col-md-9">
-                                    <input id="emailid" type="text"
+                                    <input id="emailid" type="email"
                                         class="form-control @error('emailid') is-invalid @enderror" name="emailid"
                                         value="{{ old('emailid') }}" autocomplete="emailid" autofocus>
 
@@ -179,7 +179,7 @@
                                     <select id="race"
                                         class="js-example-basic-single form-select @error('race') is-invalid @enderror"
                                         name="race">
-                                        <option selected>Please select</option>
+                                        <option value="" selected>Please select</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
                                         <option value="3">Three</option>
@@ -201,7 +201,7 @@
                                     <select id="gender"
                                         class="js-example-basic-single form-select @error('gender') is-invalid @enderror"
                                         name="gender">
-                                        <option selected>Please select</option>
+                                        <option value="" selected>Please select</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
                                         <option value="3">Three</option>
@@ -265,8 +265,7 @@
                                     @enderror
                                 </div>
 
-                                <div class="col-md-3"></div>
-                                <div class="col-md-9">
+                                <div class="col-md-9 offset-md-3">
                                     <input id="address2" type="text"
                                         class="form-control @error('address2') is-invalid @enderror" name="address2"
                                         value="{{ old('address2') }}" autocomplete="address1" autofocus>
@@ -278,8 +277,7 @@
                                     @enderror
                                 </div>
 
-                                <div class="col-md-3"></div>
-                                <div class="col-md-9">
+                                <div class="col-md-9 offset-md-3">
                                     <input id="address3" type="text"
                                         class="form-control @error('address3') is-invalid @enderror" name="address3"
                                         value="{{ old('address3') }}" autocomplete="address1" autofocus>
@@ -299,7 +297,7 @@
                                     class="col-md-3 col-form-label text-md-end">{{ __('Postcode') }}</label>
 
                                 <div class="col-md-9">
-                                    <input id="postcode" type="text"
+                                    <input id="postcode" type="number"
                                         class="form-control @error('postcode') is-invalid @enderror" name="postcode"
                                         value="{{ old('postcode') }}" autocomplete="postcode" autofocus>
 
@@ -320,7 +318,7 @@
                                         <select id="isCountry"
                                             class="js-example-basic-single form-select @error('isCountry') is-invalid @enderror"
                                             name="isCountry">
-                                            <option selected>Please select</option>
+                                            <option value="" selected>Please select</option>
                                             <option value="1">One</option>
                                             <option value="2">Two</option>
                                             <option value="3">Three</option>
@@ -380,7 +378,7 @@
                                         <input id="nonCountry" type="text"
                                             class="form-control @error('nonCountry') is-invalid @enderror"
                                             name="nonCountry" value="Malaysia" autocomplete="nonCountry"
-                                            autofocus disabled>
+                                            autofocus readonly>
 
                                         @error('nonCountry')
                                             <span class="invalid-feedback" role="alert">
@@ -398,7 +396,7 @@
                                         <select id="nonState"
                                             class="js-example-basic-single form-select @error('nonState') is-invalid @enderror"
                                             name="nonState">
-                                            <option selected>Please select</option>
+                                            <option value="" value="" selected>Please select</option>
                                             <option value="1">One</option>
                                             <option value="2">Two</option>
                                             <option value="3">Three</option>
@@ -420,7 +418,7 @@
                                         <select id="nonCity"
                                             class="js-example-basic-single form-select @error('nonCity') is-invalid @enderror"
                                             name="nonCity">
-                                            <option selected>Please select</option>
+                                            <option value="" selected>Please select</option>
                                             <option value="1">One</option>
                                             <option value="2">Two</option>
                                             <option value="3">Three</option>
@@ -445,7 +443,7 @@
                                     <select id="security"
                                         class="js-example-basic-single form-select @error('security') is-invalid @enderror"
                                         name="security">
-                                        <option selected>Please select</option>
+                                        <option value="" selected>Please select</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
                                         <option value="3">Three</option>
@@ -494,7 +492,7 @@
                             </div>
 
                             <div class="row mb-0">
-                                <div class="col-md-9 offset-md-4">
+                                <div class="col-md-9 offset-md-3">
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('Register') }}
                                     </button>

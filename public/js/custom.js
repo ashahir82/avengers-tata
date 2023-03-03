@@ -33,8 +33,8 @@ $(document).ready(function() {
             $("#labelEmailID").hide();
             $("#isCitizen").hide();
             $("#nonCitizen").show();
-            $("#isCountryID").hide();
-            $("#nonCountryID").show();
+            $("#isCountryID").show();
+            $("#nonCountryID").hide();
             $("#emailField").show();
             $("#passportField").hide();
             $("#helperUserID").html('MyPR No. (e.g. 791014145061)');
