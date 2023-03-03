@@ -16,7 +16,8 @@
                                     class="col-md-3 col-form-label text-md-end">{{ __('Nationality') }}</label>
 
                                 <div class="col-md-9">
-                                    <select id="citizenship" class="js-example-basic-single form-select @error('citizenship') is-invalid @enderror"
+                                    <select id="citizenship"
+                                        class="js-example-basic-single form-select @error('citizenship') is-invalid @enderror"
                                         name="citizenship">
                                         <option value="1">Malaysia Citizen</option>
                                         <option value="2">Permanent Citizen</option>
@@ -35,16 +36,29 @@
                                 <label for="citizenship"
                                     class="col-md-3 col-form-label text-md-end">{{ __('Citizenship') }}</label>
 
-                                <div class="col-md-9">
-                                    <select id="citizenship" class="js-example-basic-single form-select @error('citizenship') is-invalid @enderror"
-                                        name="citizenship">
+                                <div class="col-md-9" id="isCitizen">
+                                    <input id="isCitizen" type="text"
+                                        class="form-control @error('isCitizen') is-invalid @enderror" name="isCitizen"
+                                        value="{{ old('isCitizen') }}" autocomplete="isCitizen" autofocus>
+
+                                    @error('isCitizen')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+
+                                <div class="col-md-9" id="nonCitizen" style="display:none;">
+                                    <select id="nonCitizen"
+                                        class="js-example-basic-single form-select @error('nonCitizen') is-invalid @enderror"
+                                        name="nonCitizen">
                                         <option selected>Please select</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
                                         <option value="3">Three</option>
                                     </select>
 
-                                    @error('citizenship')
+                                    @error('nonCitizen')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -52,10 +66,29 @@
                                 </div>
                             </div>
 
-                            <div class="row mb-3">
-                                <label for="userid" id="labelUserID"
+                            <div class="row mb-3" id="labelUserID">
+                                <label for="userid"
                                     class="col-md-3 col-form-label text-md-end">{{ __('User ID') }}</label>
-                                <label for="userid" id="labelEmailID"
+
+                                <div class="col-md-9">
+                                    <input id="userid" type="text"
+                                        class="form-control @error('userid') is-invalid @enderror" name="userid"
+                                        value="{{ old('userid') }}" autocomplete="userid" autofocus>
+
+                                    <p id="helperUserID" class="mb-0">
+                                        As Per MyKad
+                                    </p>
+
+                                    @error('userid')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row mb-3" id="labelEmailID" style="display: none;">
+                                <label for="userid"
                                     class="col-md-3 col-form-label text-md-end">{{ __('Email') }}</label>
 
                                 <div class="col-md-9">
@@ -64,7 +97,7 @@
                                         value="{{ old('userid') }}" autocomplete="userid" autofocus>
 
                                     <p id="helperUserID" class="mb-0">
-                                        Looks good!
+                                        As Per Passport
                                     </p>
 
                                     @error('userid')
@@ -143,7 +176,8 @@
                                     class="col-md-3 col-form-label text-md-end">{{ __('Race') }}</label>
 
                                 <div class="col-md-9">
-                                    <select id="race" class="js-example-basic-single form-select @error('race') is-invalid @enderror"
+                                    <select id="race"
+                                        class="js-example-basic-single form-select @error('race') is-invalid @enderror"
                                         name="race">
                                         <option selected>Please select</option>
                                         <option value="1">One</option>
@@ -164,7 +198,8 @@
                                     class="col-md-3 col-form-label text-md-end">{{ __('Gender') }}</label>
 
                                 <div class="col-md-9">
-                                    <select id="gender" class="js-example-basic-single form-select @error('gender') is-invalid @enderror"
+                                    <select id="gender"
+                                        class="js-example-basic-single form-select @error('gender') is-invalid @enderror"
                                         name="gender">
                                         <option selected>Please select</option>
                                         <option value="1">One</option>
@@ -197,7 +232,7 @@
                                 </div>
                             </div>
 
-                            <div class="row mb-3" id="passportField">
+                            <div class="row mb-3" id="passportField" style="display: none;">
                                 <label for="passport"
                                     class="col-md-3 col-form-label text-md-end">{{ __('Passport No.') }}</label>
 
@@ -276,66 +311,127 @@
                                 </div>
                             </div>
 
-                            <div class="row mb-3">
-                                <label for="country"
-                                    class="col-md-3 col-form-label text-md-end">{{ __('Country') }}</label>
+                            <div id="nonCountry" style="display:none;">
+                                <div class="row mb-3">
+                                    <label for="country"
+                                        class="col-md-3 col-form-label text-md-end">{{ __('Country') }}</label>
 
-                                <div class="col-md-9">
-                                    <select id="country" class="js-example-basic-single form-select @error('country') is-invalid @enderror"
-                                        name="country">
-                                        <option selected>Please select</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
+                                    <div class="col-md-9">
+                                        <input id="isCountry" type="text"
+                                            class="form-control @error('isCountry') is-invalid @enderror"
+                                            name="isCountry" value="{{ old('isCountry') }}" autocomplete="isCountry"
+                                            autofocus>
 
-                                    @error('country')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                                        @error('isCountry')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="state"
+                                        class="col-md-3 col-form-label text-md-end">{{ __('State') }}</label>
+
+                                    <div class="col-md-9">
+                                        <input id="isState" type="text"
+                                            class="form-control @error('isState') is-invalid @enderror"
+                                            name="isState" value="{{ old('isState') }}" autocomplete="isState"
+                                            autofocus>
+
+                                        @error('isState')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="city"
+                                        class="col-md-3 col-form-label text-md-end">{{ __('City') }}</label>
+
+                                    <div class="col-md-9">
+                                        <input id="isCity" type="text"
+                                            class="form-control @error('isCity') is-invalid @enderror"
+                                            name="isCity" value="{{ old('isCity') }}" autocomplete="isCity"
+                                            autofocus>
+
+                                        @error('isCity')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="row mb-3">
-                                <label for="state"
-                                    class="col-md-3 col-form-label text-md-end">{{ __('State') }}</label>
+                            <div id="isCountry">
+                                <div class="row mb-3">
+                                    <label for="country"
+                                        class="col-md-3 col-form-label text-md-end">{{ __('Country') }}</label>
 
-                                <div class="col-md-9">
-                                    <select id="country" class="js-example-basic-single form-select @error('country') is-invalid @enderror"
-                                        name="country">
-                                        <option selected>Please select</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
+                                    <div class="col-md-9">
+                                        <select id="nonCountry"
+                                            class="js-example-basic-single form-select @error('nonCountry') is-invalid @enderror"
+                                            name="nonCountry">
+                                            <option selected>Please select</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
 
-                                    @error('state')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                                        @error('nonCountry')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="row mb-3">
-                                <label for="city"
-                                    class="col-md-3 col-form-label text-md-end">{{ __('City') }}</label>
+                                <div class="row mb-3">
+                                    <label for="state"
+                                        class="col-md-3 col-form-label text-md-end">{{ __('State') }}</label>
 
-                                <div class="col-md-9">
-                                    <select id="country" class="js-example-basic-single form-select @error('country') is-invalid @enderror"
-                                        name="country">
-                                        <option selected>Please select</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
+                                    <div class="col-md-9">
+                                        <select id="nonState"
+                                            class="js-example-basic-single form-select @error('nonState') is-invalid @enderror"
+                                            name="nonState">
+                                            <option selected>Please select</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
 
-                                    @error('city')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                                        @error('nonState')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="city"
+                                        class="col-md-3 col-form-label text-md-end">{{ __('City') }}</label>
+
+                                    <div class="col-md-9">
+                                        <select id="nonCity"
+                                            class="js-example-basic-single form-select @error('nonCity') is-invalid @enderror"
+                                            name="nonCity">
+                                            <option selected>Please select</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+
+                                        @error('nonCity')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
                                 </div>
                             </div>
 
@@ -346,7 +442,8 @@
                                     class="col-md-3 col-form-label text-md-end">{{ __('Security Question') }}</label>
 
                                 <div class="col-md-9">
-                                    <select id="security" class="js-example-basic-single form-select @error('security') is-invalid @enderror"
+                                    <select id="security"
+                                        class="js-example-basic-single form-select @error('security') is-invalid @enderror"
                                         name="security">
                                         <option selected>Please select</option>
                                         <option value="1">One</option>

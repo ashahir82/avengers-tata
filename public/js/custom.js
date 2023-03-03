@@ -1,6 +1,10 @@
 $(document).ready(function() {
     $("#labelUserID").show();
     $("#labelEmailID").hide();
+    $("#isCitizen").show();
+    $("#nonCitizen").hide();
+    $("#isCountry").show();
+    $("#nonCountry").hide();
     $("#emailField").show();
     $("#passportField").hide();
     $("#helperUserID").html('MyKad No. (e.g. 791014145061)');
@@ -15,6 +19,10 @@ $(document).ready(function() {
         if ($("#citizenship").val() == 1) {
             $("#labelUserID").show();
             $("#labelEmailID").hide();
+            $("#isCitizen").show();
+            $("#nonCitizen").hide();
+            $("#isCountry").show();
+            $("#nonCitizen").hide();
             $("#emailField").show();
             $("#passportField").hide();
             $("#helperUserID").html('MyKad No. (e.g. 791014145061)');
@@ -23,6 +31,10 @@ $(document).ready(function() {
         } else if (($("#citizenship").val() == 2)) {
             $("#labelUserID").show();
             $("#labelEmailID").hide();
+            $("#isCitizen").hide();
+            $("#nonCitizen").show();
+            $("#isCountry").hide();
+            $("#nonCountry").show();
             $("#emailField").show();
             $("#passportField").hide();
             $("#helperUserID").html('MyPR No. (e.g. 791014145061)');
@@ -31,11 +43,13 @@ $(document).ready(function() {
         } else if (($("#citizenship").val() == 3)) {
             $("#labelUserID").hide();
             $("#labelEmailID").show();
+            $("#isCitizen").hide();
+            $("#nonCitizen").show();
+            $("#isCountry").hide();
+            $("#nonCountry").show();
             $("#emailField").hide();
             $("#passportField").show();
             $("#helperUserID").html('This email will be used as User ID');
-            $("#helperName").html('As Per Passport');
-            $("#helperAddress").html('As Per Passport');
         }
     });
 });
