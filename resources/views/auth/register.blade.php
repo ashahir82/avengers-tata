@@ -39,7 +39,7 @@
                                 <div class="col-md-9" id="isCitizen">
                                     <input id="isCitizen" type="text"
                                         class="form-control @error('isCitizen') is-invalid @enderror" name="isCitizen"
-                                        value="{{ old('isCitizen') }}" autocomplete="isCitizen" autofocus>
+                                        value="Malaysia" autocomplete="isCitizen" autofocus disabled>
 
                                     @error('isCitizen')
                                         <span class="invalid-feedback" role="alert">
@@ -88,19 +88,19 @@
                             </div>
 
                             <div class="row mb-3" id="labelEmailID" style="display: none;">
-                                <label for="userid"
+                                <label for="emailid"
                                     class="col-md-3 col-form-label text-md-end">{{ __('Email') }}</label>
 
                                 <div class="col-md-9">
-                                    <input id="userid" type="text"
-                                        class="form-control @error('userid') is-invalid @enderror" name="userid"
-                                        value="{{ old('userid') }}" autocomplete="userid" autofocus>
+                                    <input id="emailid" type="text"
+                                        class="form-control @error('emailid') is-invalid @enderror" name="emailid"
+                                        value="{{ old('emailid') }}" autocomplete="emailid" autofocus>
 
                                     <p id="helperUserID" class="mb-0">
                                         As Per Passport
                                     </p>
 
-                                    @error('userid')
+                                    @error('emailid')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -311,16 +311,20 @@
                                 </div>
                             </div>
 
-                            <div id="nonCountry" style="display:none;">
+                            <div id="nonCountryID" style="display:none;">
                                 <div class="row mb-3">
                                     <label for="country"
                                         class="col-md-3 col-form-label text-md-end">{{ __('Country') }}</label>
 
                                     <div class="col-md-9">
-                                        <input id="isCountry" type="text"
-                                            class="form-control @error('isCountry') is-invalid @enderror"
-                                            name="isCountry" value="{{ old('isCountry') }}" autocomplete="isCountry"
-                                            autofocus>
+                                        <select id="isCountry"
+                                            class="js-example-basic-single form-select @error('isCountry') is-invalid @enderror"
+                                            name="isCountry">
+                                            <option selected>Please select</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
 
                                         @error('isCountry')
                                             <span class="invalid-feedback" role="alert">
@@ -367,20 +371,16 @@
                                 </div>
                             </div>
 
-                            <div id="isCountry">
+                            <div id="isCountryID">
                                 <div class="row mb-3">
                                     <label for="country"
                                         class="col-md-3 col-form-label text-md-end">{{ __('Country') }}</label>
 
                                     <div class="col-md-9">
-                                        <select id="nonCountry"
-                                            class="js-example-basic-single form-select @error('nonCountry') is-invalid @enderror"
-                                            name="nonCountry">
-                                            <option selected>Please select</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
+                                        <input id="nonCountry" type="text"
+                                            class="form-control @error('nonCountry') is-invalid @enderror"
+                                            name="nonCountry" value="Malaysia" autocomplete="nonCountry"
+                                            autofocus disabled>
 
                                         @error('nonCountry')
                                             <span class="invalid-feedback" role="alert">

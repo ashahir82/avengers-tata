@@ -3,8 +3,8 @@ $(document).ready(function() {
     $("#labelEmailID").hide();
     $("#isCitizen").show();
     $("#nonCitizen").hide();
-    $("#isCountry").show();
-    $("#nonCountry").hide();
+    $("#isCountryID").show();
+    $("#nonCountryID").hide();
     $("#emailField").show();
     $("#passportField").hide();
     $("#helperUserID").html('MyKad No. (e.g. 791014145061)');
@@ -21,8 +21,8 @@ $(document).ready(function() {
             $("#labelEmailID").hide();
             $("#isCitizen").show();
             $("#nonCitizen").hide();
-            $("#isCountry").show();
-            $("#nonCitizen").hide();
+            $("#isCountryID").show();
+            $("#nonCountryID").hide();
             $("#emailField").show();
             $("#passportField").hide();
             $("#helperUserID").html('MyKad No. (e.g. 791014145061)');
@@ -33,8 +33,8 @@ $(document).ready(function() {
             $("#labelEmailID").hide();
             $("#isCitizen").hide();
             $("#nonCitizen").show();
-            $("#isCountry").hide();
-            $("#nonCountry").show();
+            $("#isCountryID").hide();
+            $("#nonCountryID").show();
             $("#emailField").show();
             $("#passportField").hide();
             $("#helperUserID").html('MyPR No. (e.g. 791014145061)');
@@ -45,8 +45,8 @@ $(document).ready(function() {
             $("#labelEmailID").show();
             $("#isCitizen").hide();
             $("#nonCitizen").show();
-            $("#isCountry").hide();
-            $("#nonCountry").show();
+            $("#isCountryID").hide();
+            $("#nonCountryID").show();
             $("#emailField").hide();
             $("#passportField").show();
             $("#helperUserID").html('This email will be used as User ID');

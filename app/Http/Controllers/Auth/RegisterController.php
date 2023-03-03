@@ -51,9 +51,30 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['required_unless:citizenship,3', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'CaptchaCode' => 'required|valid_captcha'
+            'CaptchaCode' => ['required', 'valid_captcha'],
+            'citizenship' => ['required', 'string', 'max:255'],
+            'isCitizen' => ['required', 'string', 'max:255'],
+            'nonCitizen' => ['required', 'string', 'max:255'],
+            'userid' => ['required', 'string', 'max:255'],
+            'emailid' => ['required', 'string', 'max:255'],
+            'dob' => ['required', 'string', 'max:255'],
+            'race' => ['required', 'string', 'max:255'],
+            'gender' => ['required', 'string', 'max:255'],
+            'passport' => ['required', 'string', 'max:255'],
+            'address1' => ['required', 'string', 'max:255'],
+            'address2' => ['required', 'string', 'max:255'],
+            'address3' => ['required', 'string', 'max:255'],
+            'postcode' => ['required', 'string', 'max:255'],
+            'isCountry' => ['required_if:citizenship,3', 'string', 'max:255'],
+            'isState' => ['required_if:citizenship,3', 'string', 'max:255'],
+            'isCity' => ['required_if:citizenship,3', 'string', 'max:255'],
+            'nonCountry' => ['required_unless:citizenship,3', 'string', 'max:255'],
+            'nonState' => ['required_unless:citizenship,3', 'string', 'max:255'],
+            'nonCity' => ['required_unless:citizenship,3', 'string', 'max:255'],
+            'security' => ['required', 'string', 'max:255'],
+            'answer' => ['required', 'string', 'max:255'],
         ]);
     }
 
